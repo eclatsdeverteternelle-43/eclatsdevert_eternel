@@ -117,6 +117,12 @@ footer {
   height: auto;
   margin-bottom: 0.5rem;
 }
+/*Image*/
+image {
+  width: 100px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
 
 /* Responsive */
 
