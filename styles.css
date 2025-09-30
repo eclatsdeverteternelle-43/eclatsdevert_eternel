@@ -118,10 +118,22 @@ footer {
   margin-bottom: 0.5rem;
 }
 /*Image*/
-image {
-  width: 100px;
-  height: auto;
-  margin-bottom: 0.5rem;
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.gallery .image {
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.gallery .image:hover {
+  transform: scale(1.05);
 }
 
 /* Responsive */
