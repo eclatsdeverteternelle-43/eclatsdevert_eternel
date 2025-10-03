@@ -1,4 +1,0 @@
-git add images/*.jpg
-git commit -m "Ajout des fichiers JPG"
-git push origin main
-
