@@ -137,6 +137,20 @@
       Nous proposons l’<strong>entretien d’espaces verts</strong> et l’<strong>entretien de sépultures</strong> 
       dans un rayon de <strong>25 km autour de Romans</strong>.<br><br>
       Pour les demandes au-delà de cette zone, un <strong>devis personnalisé</strong> peut être établi.
+
+<div style="font-family:sans-serif; font-size:18px;">
+  👁️ Nombre total de visites : <span id="visits">0</span>
+</div>
+
+<script>
+  fetch('https://api.countapi.xyz/hit/https://eclatsdeverteternelle.fr//visites')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('visits').innerText = data.value;
+    });
+</script>
+
+      
     <!-- Elfsight Google Reviews | Untitled Google Reviews -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
 <div class="elfsight-app-47fb5db3-3d3c-49cc-8a28-113422fdf537" data-elfsight-app-lazy></div>
