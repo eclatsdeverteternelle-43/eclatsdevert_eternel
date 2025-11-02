@@ -83,3 +83,37 @@
     padding: 0.6rem 1.5rem;
   }
 }
+.before-after-slider {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  cursor: ew-resize; /* Curseur horizontal */
+  margin: 1rem 0;
+}
+
+.before-after-slider img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.before-after-slider .after {
+  width: 50%; /* Image après visible à moitié par défaut */
+  overflow: hidden;
+  clip-path: inset(0 50% 0 0); /* Masque moitié droite */
+}
+
+.before-after-slider .slider-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #2e7d32;
+  cursor: ew-resize;
+  z-index: 2;
+  transform: translateX(-50%);
+}
