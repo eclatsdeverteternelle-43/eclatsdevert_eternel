@@ -15,7 +15,7 @@
 
     /* Bandeau d'accueil (hero) */
     #hero {
-      background-image: url('URL_DE_TON_IMAGE'); /* Remplace par le lien de ton image */
+      background-image: url('bannière.png'); /* Ton image de fond */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -63,6 +63,11 @@
 
     #hero a:hover {
       background-color: #1b4d24;
+    }
+
+    /* Compteur */
+    #counter {
+      margin-top: 1rem;
     }
 
     /* Onglets */
@@ -118,12 +123,13 @@
   <p>L’entretien de vos espaces verts et sépultures, avec soin et proximité.</p>
   <a href="#contact">Demander un devis gratuit</a>
 
-
-<!-- hitwebcounter Code START -->
-<a href="https://www.hitwebcounter.com/" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=21454336&style=0001&nbdigits=5&type=page&initCount=0" title="Free Tools" Alt="Free Tools"   border="0" /></a>                                    
-                                    
-
+  <!-- Compteur -->
+  <div id="counter">
+    <a href="https://www.hitwebcounter.com/" target="_blank">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=21454336&style=0001&nbdigits=5&type=page&initCount=0" 
+           title="Free Tools" alt="Free Tools" border="0" />
+    </a>
+  </div>
 </section>
 
 <!-- Navigation par onglets -->
@@ -176,64 +182,4 @@
     <p>Vous trouverez ci-après les tarifs appliqués pour l'entretien des sépultures.</p>
 
     <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(63,69,81,0.16);">
-      <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
-        src="https://www.canva.com/design/DAGwnvRmzKc/Bloaw6aFtCBxw0vPQCWS4Q/view?embed" allowfullscreen>
-      </iframe>
-    </div>
-  </section>
-
-  <section id="contact" class="tab-content">
-    <h2>Contactez-nous</h2>
-    <form action="https://formspree.io/f/xyzpryor" method="POST">
-      <label for="name">Nom :</label><br>
-      <input type="text" id="name" name="name" required /><br><br>
-
-      <label for="email">Email :</label><br>
-      <input type="email" id="email" name="email" required /><br><br>
-
-      <label for="telephone">Téléphone :</label><br>
-      <input type="tel" id="telephone" name="telephone" required /><br><br>
-
-      <label for="message">Message :</label><br>
-      <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-      <div class="g-recaptcha" data-sitekey="6LfiINorAAAAANH6dxsH1TM7I4o68wuX-WSimDnM"></div>
-      <button type="submit">Envoyer</button>
-    </form>
-    <p>
-      Ou directement : 
-      <a href="mailto:eclatsdeverteternelle@gmail.com">eclatsdeverteternelle@gmail.com</a> – 06 75 38 61 59
-    </p>
-  </section>
-</main>
-
-<footer>
-  <a href="https://g.page/r/CURTefQcap7REBM/review"
-     target="_blank"
-     rel="noopener noreferrer"
-     style="display: inline-block; background-color: #fbbc04; color: #000; padding: 10px 18px; margin-top: 10px; text-decoration: none; border-radius: 8px; font-weight: bold; font-family: Arial, sans-serif;">
-     ⭐ Laissez un avis sur Google
-  </a>
-  <p>© 2025 Éclats de vert & Éternel - Tous droits réservés</p>
-</footer>
-
-<script>
-  // Gestion des onglets
-  const tabs = document.querySelectorAll(".tab-link");
-  const contents = document.querySelectorAll(".tab-content");
-
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      tabs.forEach(t => t.classList.remove("active"));
-      contents.forEach(c => c.classList.remove("active"));
-
-      tab.classList.add("active");
-      document.getElementById(tab.dataset.tab).classList.add("active");
-    });
-  });
-</script>
-
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-</body>
-</html>
+      <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0
