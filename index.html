@@ -251,5 +251,40 @@
   });
 </script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+document.querySelectorAll('.before-after-slider').forEach(slider => {
+  const afterImg = slider.querySelector('.after');
+  const handle = slider.querySelector('.slider-handle');
+
+  let isDragging = false;
+
+  const startDrag = e => {
+    isDragging = true;
+  };
+
+  const stopDrag = e => {
+    isDragging = false;
+  };
+
+  const moveSlider = e => {
+    if (!isDragging) return;
+    const rect = slider.getBoundingClientRect();
+    let x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+    x = Math.max(0, Math.min(x, rect.width));
+    afterImg.style.width = x + 'px';
+    handle.style.left = x + 'px';
+  };
+
+  slider.addEventListener('mousedown', startDrag);
+  slider.addEventListener('touchstart', startDrag);
+  window.addEventListener('mouseup', stopDrag);
+  window.addEventListener('touchend', stopDrag);
+  window.addEventListener('mousemove', moveSlider);
+  window.addEventListener('touchmove', moveSlider);
+});
+</script>
+  
+
 </body>
 </html>
