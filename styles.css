@@ -1,17 +1,6 @@
-/* styles.css */
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f8fcf8;
-  color: #2a4d1e;
-  line-height: 1.6;
-}
-
 /* Bandeau d'accueil (hero) */
 #hero {
-  background-image: url('bannière.png'); /* Ton image à la racine */
+  background-image: url('bannière.png'); /* Vérifie le chemin de ton image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,31 +9,33 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
   text-align: center;
+  color: white;
   padding: 0 2rem;
-  position: relative;
+  position: relative; /* nécessaire pour l'overlay */
+  overflow: hidden;
 }
 
+/* Overlay sombre semi-transparent */
 #hero::after {
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Overlay semi-transparent */
+  background: rgba(0, 0, 0, 0.4); /* opacité ajustable */
   z-index: 0;
 }
 
+/* Tous les éléments du hero au-dessus de l'overlay */
 #hero * {
   position: relative;
   z-index: 1;
 }
 
 #hero .logo {
-  width: 80px;
-  height: auto;
-  margin-bottom: 0.5rem;
+  max-height: 80px;
+  margin-bottom: 1rem;
 }
 
 #hero h1 {
@@ -63,7 +54,7 @@ body {
 #hero a {
   margin-top: 1.5rem;
   padding: 0.8rem 2rem;
-  background-color: #4a7c24;
+  background-color: #2e7d32;
   color: white;
   font-weight: bold;
   border-radius: 10px;
@@ -74,145 +65,21 @@ body {
 }
 
 #hero a:hover {
-  background-color: #3b641b;
-}
-
-/* Header */
-header {
-  background-color: #4a7c24;
-  color: white;
-  padding: 1rem 2rem;
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-header .tagline {
-  font-style: italic;
-  margin: 0.3rem 0 1rem 0;
-}
-
-/* Navigation */
-nav a {
-  color: #d1e7b1;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Main */
-main {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-section {
-  margin-bottom: 3rem;
-}
-
-h2 {
-  color: #4a7c24;
-  border-bottom: 2px solid #4a7c24;
-  padding-bottom: 0.3rem;
-}
-
-ul {
-  list-style-type: disc;
-  margin-left: 1.5rem;
-}
-
-/* Formulaires */
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-}
-
-label {
-  margin: 0.5rem 0 0.2rem;
-  font-weight: 600;
-}
-
-input,
-textarea {
-  padding: 0.5rem;
-  border: 1px solid #4a7c24;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-family: inherit;
-  margin-bottom: 1em;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-button {
-  margin-top: 1rem;
-  padding: 0.7rem;
-  background-color: #4a7c24;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  font-weight: 700;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #3b641b;
-}
-
-/* Footer */
-footer {
-  background-color: #d1e7b1;
-  text-align: center;
-  padding: 1rem 0;
-  color: #2a4d1e;
-  font-size: 0.9rem;
-}
-
-/* Galerie */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-}
-
-.gallery .image {
-  max-width: 300px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
-}
-
-.gallery .image:hover {
-  transform: scale(1.05);
+  background-color: #1b4d24;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  nav a {
-    margin: 0 0.5rem;
-  }
-
   #hero h1 {
     font-size: 2rem;
   }
 
   #hero p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+  }
+
+  #hero a {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
   }
 }
