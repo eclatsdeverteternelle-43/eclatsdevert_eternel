@@ -15,7 +15,7 @@
 
     /* Bandeau d'accueil (hero) */
     #hero {
-      background-image: url('https://github.com/eclatsdeverteternelle-43/eclatsdevert_eternel/blob/7e368167e4f2a74f36657cbcfdf258c008eeceb0/banniere.png'); /* Ton image de fond */
+      background-image: url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/banniere.png'); /* lien raw GitHub */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -112,6 +112,14 @@
       color: white;
       margin-top: 2rem;
     }
+
+    /* Images dans les sections */
+    .tab-content img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
   </style>
 </head>
 <body>
@@ -180,6 +188,49 @@
 
     <h2>Tarifs</h2>
     <p>Vous trouverez ci-après les tarifs appliqués pour l'entretien des sépultures.</p>
+  </section>
 
-    <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(63,69,81,0.16);">
-      <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0
+  <section id="contact" class="tab-content">
+    <h2>Contact</h2>
+    <p>Pour toute demande de devis ou renseignement :</p>
+    <form>
+      <label for="name">Nom :</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message :</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Éclats de Vert & Éternelle - Tous droits réservés
+</footer>
+
+<!-- Script onglets -->
+<script>
+  const tabLinks = document.querySelectorAll('.tab-link');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabLinks.forEach(button => {
+    button.addEventListener('click', () => {
+      const target = button.getAttribute('data-tab');
+
+      // Désactive tous les onglets et contenus
+      tabLinks.forEach(btn => btn.classList.remove('active'));
+      tabContents.forEach(content => content.classList.remove('active'));
+
+      // Active l'onglet et le contenu correspondant
+      button.classList.add('active');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
