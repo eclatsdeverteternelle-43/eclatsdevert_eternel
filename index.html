@@ -172,11 +172,66 @@
       <li>Tonte de pelouse, désherbage</li>
       <li>Entretien régulier ou ponctuel</li>
       <li>Nos services sont proposés au forfait, plutôt qu'à un tarif horaire.</li>
+
+      
       <div class="before-after-slider">
-    <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant_1.png" alt="tonte pelouse Avant" class="before">
-    <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres_1.png" alt="tonte pelouse Après" class="after">
-    <div class="slider-handle"></div>
+  <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant_1.png" alt="Avant" class="before">
+  <div class="after-wrapper">
+    <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres_1.png" alt="Après" class="after">
   </div>
+  <div class="slider-handle"></div>
+</div>
+
+<style>
+.before-after-slider {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 400px;
+  margin: 1rem auto;
+  overflow: hidden;
+}
+
+.before-after-slider img.before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.before-after-slider .after-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Largeur initiale du "après" */
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.before-after-slider img.after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.before-after-slider .slider-handle {
+  position: absolute;
+  top: 0;
+  left: 50%; /* même que largeur initiale */
+  width: 4px;
+  height: 100%;
+  background: #fff;
+  cursor: ew-resize;
+  z-index: 3;
+}
+</style>
 
       <li><img src="avant-apres_2.png" alt="Embélissement de haie" /></li>
       <li><img src="avant-apres_3.png" alt="Taille de haie" /></li>
@@ -253,25 +308,19 @@
 
 <script>
 document.querySelectorAll('.before-after-slider').forEach(slider => {
-  const afterImg = slider.querySelector('.after');
+  const afterWrapper = slider.querySelector('.after-wrapper');
   const handle = slider.querySelector('.slider-handle');
 
   let isDragging = false;
 
-  const startDrag = e => {
-    isDragging = true;
-  };
-
-  const stopDrag = e => {
-    isDragging = false;
-  };
-
+  const startDrag = e => { isDragging = true; };
+  const stopDrag = e => { isDragging = false; };
   const moveSlider = e => {
     if (!isDragging) return;
     const rect = slider.getBoundingClientRect();
     let x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
     x = Math.max(0, Math.min(x, rect.width));
-    afterImg.style.width = x + 'px';
+    afterWrapper.style.width = x + 'px';
     handle.style.left = x + 'px';
   };
 
@@ -282,6 +331,8 @@ document.querySelectorAll('.before-after-slider').forEach(slider => {
   window.addEventListener('mousemove', moveSlider);
   window.addEventListener('touchmove', moveSlider);
 });
+</script>
+
 </script>
 
   
