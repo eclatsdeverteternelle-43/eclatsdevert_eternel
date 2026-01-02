@@ -1,87 +1,130 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Éclats de Vert Éternelle</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Éclats de vert & Éternel - Entretien espaces verts & sépultures</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
-  <!-- HEADER ET MENU -->
-  <header>
-    <nav>
-      <a href="#" class="active" data-tab="home">Accueil</a>
-      <a href="#" data-tab="page1">Page 1</a>
-      <a href="#" data-tab="page2">Page 2</a>
-      <a href="#" data-tab="page3">Page 3</a>
-    </nav>
-  </header>
+<section id="hero">
+  <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/logo.png" alt="Logo" class="logo">
+  <h1>Éclats de Vert & Éternel</h1>
+  <p>L’entretien de vos espaces verts et sépultures, avec soin et proximité.</p>
+  <a href="#contact">Demander un devis gratuit</a>
 
-  <!-- HERO -->
-  <section id="hero">
-    <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/7e368167e4f2a74f36657cbcfdf258c008eeceb0/logo.png" alt="Logo" class="logo">
-    <h1>Bienvenue sur Éclats de Vert Éternelle</h1>
-    <p>Découvrez nos services et projets à travers ce site.</p>
-    <a href="#page1">Découvrir</a>
+  <div id="counter">
+    <a href="https://www.hitwebcounter.com/" target="_blank">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=21454336&style=0001&nbdigits=5&type=page&initCount=0" alt="Free Tools" border="0">
+    </a>
+  </div>
+</section>
+
+<div class="tabs">
+  <button class="tab-link active" data-tab="accueil">Accueil</button>
+  <button class="tab-link" data-tab="espaces">Entretien espaces verts</button>
+  <button class="tab-link" data-tab="sepultures">Entretien sépultures</button>
+  <button class="tab-link" data-tab="contact">Contact</button>
+</div>
+
+<main>
+  <!-- Accueil -->
+  <section id="accueil" class="tab-content active">
+    <h2>Bienvenue</h2>
+    <p>
+      <strong>Petite structure indépendante</strong>, <em>Éclats de Vert & Éternel</em> met 
+      <strong>l’humain et la nature</strong> au cœur de ses engagements.<br>
+      Nous proposons l’<strong>entretien d’espaces verts</strong> et l’<strong>entretien de sépultures</strong> 
+      dans un rayon de <strong>25 km autour de Romans</strong>.<br><br>
+      Pour les demandes au-delà de cette zone, un <strong>devis personnalisé</strong> peut être établi.
+    </p>
+
+    <div class="logo-service">
+      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/SAP.png" alt="Logo Services à la Personne">
+      <p>
+        💡 Grâce à l’agrément « Services à la Personne », vous bénéficiez de 
+        <span>50% de crédit d’impôt</span> sur toutes nos prestations d’entretien.
+      </p>
+    </div>
+
+    <!-- Avis Google -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-47fb5db3-3d3c-49cc-8a28-113422fdf537" data-elfsight-app-lazy></div>
   </section>
 
-  <!-- TABS -->
-  <div class="tabs">
-    <button class="active" data-tab="home">Accueil</button>
-    <button data-tab="page1">Page 1</button>
-    <button data-tab="page2">Page 2</button>
-    <button data-tab="page3">Page 3</button>
-  </div>
+  <!-- Espaces verts -->
+  <section id="espaces" class="tab-content">
+    <h2>Entretien des espaces verts</h2>
+    <ul>
+      <li>Taille d’arbustes, nettoyage de massifs</li>
+      <li>Tonte de pelouse, désherbage</li>
+      <li>Entretien régulier ou ponctuel</li>
+      <li>Prestations au forfait</li>
+    </ul>
 
-  <!-- CONTENU DES PAGES -->
-  <div id="home" class="tab-content active">
-    <h2>Accueil</h2>
-    <p>Contenu principal de l'accueil.</p>
-
-    <!-- Slider Avant/Après -->
+    <!-- Sliders avant/après -->
     <div class="before-after-slider">
-      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant.png" alt="Avant">
-      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres.png" class="after" alt="Après">
+      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant_1.png" class="before" alt="Avant">
+      <div class="after-wrapper">
+        <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres_1.png" class="after" alt="Après">
+      </div>
       <div class="slider-handle"></div>
     </div>
-  </div>
 
-  <div id="page1" class="tab-content">
-    <h2>Page 1</h2>
-    <p>Voici le contenu de la page 1 avec son propre slider :</p>
     <div class="before-after-slider">
-      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant2.png" alt="Avant">
-      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres2.png" class="after" alt="Après">
+      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant_2.png" class="before" alt="Avant">
+      <div class="after-wrapper">
+        <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres_2.png" class="after" alt="Après">
+      </div>
       <div class="slider-handle"></div>
     </div>
-  </div>
 
-  <div id="page2" class="tab-content">
-    <h2>Page 2</h2>
-    <p>Contenu de la page 2 avec slider :</p>
     <div class="before-after-slider">
-      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant3.png" alt="Avant">
-      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres3.png" class="after" alt="Après">
+      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant_3.png" class="before" alt="Avant">
+      <div class="after-wrapper">
+        <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres_3.png" class="after" alt="Après">
+      </div>
       <div class="slider-handle"></div>
     </div>
-  </div>
+  </section>
 
-  <div id="page3" class="tab-content">
-    <h2>Page 3</h2>
-    <p>Contenu de la page 3 avec slider :</p>
-    <div class="before-after-slider">
-      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant4.png" alt="Avant">
-      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres4.png" class="after" alt="Après">
-      <div class="slider-handle"></div>
+  <!-- Sépultures -->
+  <section id="sepultures" class="tab-content">
+    <h2>Entretien des sépultures</h2>
+    <ul>
+      <li>Nettoyage pierres tombales</li>
+      <li>Désherbage et fleurissement</li>
+      <li>Entretien régulier ou ponctuel</li>
+    </ul>
+
+    <h2>Tarifs</h2>
+    <div class="canva-embed">
+      <iframe src="https://www.canva.com/design/DAGwnvRmzKc/Bloaw6aFtCBxw0vPQCWS4Q/view?embed" allowfullscreen></iframe>
     </div>
-  </div>
+  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Éclats de Vert Éternelle. Tous droits réservés.</p>
-  </footer>
+  <!-- Contact -->
+  <section id="contact" class="tab-content">
+    <h2>Contactez-nous</h2>
+    <form action="https://formspree.io/f/xyzpryor" method="POST">
+      <input type="text" name="name" placeholder="Nom" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="telephone" placeholder="Téléphone" required>
+      <textarea name="message" placeholder="Message" required></textarea>
+      <div class="g-recaptcha" data-sitekey="6LfiINorAAAAANH6dxsH1TM7I4o68wuX-WSimDnM"></div>
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+</main>
 
-  <script src="script.js"></script>
+<footer>
+  &copy; 2025 Éclats de Vert & Éternel - Tous droits réservés
+  <br><br>
+  <a href="https://g.page/r/CURTefQcap7REBM/review" class="google-review" target="_blank">⭐ Laisser un avis sur Google</a>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
