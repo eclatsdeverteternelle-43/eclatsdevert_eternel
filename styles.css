@@ -1,10 +1,7 @@
 /* =========================
    BASE GÉNÉRALE
 ========================= */
-* {
-  box-sizing: border-box;
-}
-
+* { box-sizing: border-box; }
 html, body {
   margin: 0;
   padding: 0;
@@ -15,54 +12,47 @@ html, body {
 }
 
 /* =========================
-   HEADER & MENU (TABS)
+   HEADER & MENU
 ========================= */
 header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10000;
   background: #2e7d32;
 }
 
-/* Menu principal */
 nav {
   display: flex;
-  flex-wrap: nowrap;           /* empêche le retour à la ligne */
+  flex-wrap: nowrap;
   justify-content: center;
-  overflow-x: auto;            /* autorise le scroll horizontal */
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   position: relative;
-  z-index: 10000;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   padding: 12px 16px;
-  flex: 0 0 auto;              /* empêche les onglets de se réduire */
+  flex: 0 0 auto;
   white-space: nowrap;
   transition: background 0.3s ease;
 }
 
-nav a:hover,
-nav a.active {
+nav a:hover, nav a.active {
   background-color: #1b4d24;
   border-radius: 6px;
 }
 
-/* Menu mobile responsive */
 @media (max-width: 768px) {
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
+  nav { flex-wrap: wrap; width: 100%; }
 }
 
 /* =========================
    HERO
 ========================= */
 #hero {
-  background-image: url('https://github.com/eclatsdeverteternelle-43/eclatsdevert_eternel/blob/7e368167e4f2a74f36657cbcfdf258c008eeceb0/banniere.png');
+  background-image: url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/7e368167e4f2a74f36657cbcfdf258c008eeceb0/banniere.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -79,27 +69,19 @@ nav a.active {
   overflow-y: visible;
 }
 
-/* Overlay sombre semi-transparent */
 #hero::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
+  top:0; left:0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0,0,0,0.4);
   z-index: 0;
 }
 
-/* Tous les éléments du hero au-dessus de l'overlay */
-#hero * {
-  position: relative;
-  z-index: 1;
-}
+#hero * { position: relative; z-index: 1; }
 
-#hero .logo {
-  max-height: 80px;
-  margin-bottom: 1rem;
-}
+#hero .logo { max-height: 80px; margin-bottom: 1rem; }
 
 #hero h1 {
   font-size: 3rem;
@@ -127,9 +109,50 @@ nav a.active {
   transition: all 0.3s ease;
 }
 
-#hero a:hover {
-  background-color: #1b4d24;
+#hero a:hover { background-color: #1b4d24; }
+
+@media (max-width: 600px) {
+  #hero h1 { font-size: 2rem; }
+  #hero p { font-size: 1.2rem; }
+  #hero a { font-size: 1rem; padding: 0.6rem 1.5rem; }
 }
+
+/* =========================
+   TABS
+========================= */
+.tabs {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+.tabs button {
+  flex: 0 0 auto;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: #2e7d32;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-right: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.tabs button.active { background: #1b4d24; }
+
+.tab-content {
+  display: none;
+  padding: 2rem;
+  background: white;
+  margin: 1rem;
+  border-radius: 8px;
+}
+
+.tab-content.active { display: block; }
 
 /* =========================
    SLIDER AVANT/APRES
@@ -170,60 +193,6 @@ nav a.active {
 }
 
 /* =========================
-   TABS (CONTENU) 
-========================= */
-.tabs {
-  display: flex;
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-  margin: 1rem 0;
-}
-
-.tabs button {
-  flex: 0 0 auto;
-  padding: 1rem 1.5rem;
-  border: none;
-  background: #2e7d32;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 6px;
-  margin-right: 0.5rem;
-  transition: background 0.3s ease;
-}
-
-.tabs button.active {
-  background: #1b4d24;
-}
-
-.tab-content {
-  display: none;
-  padding: 2rem;
-  background: white;
-  margin: 1rem 0;
-  border-radius: 8px;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-/* =========================
-   IMAGES ET BOUTONS
-========================= */
-button, a {
-  padding: 12px 20px;
-  margin: 8px 0;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-/* =========================
    FOOTER
 ========================= */
 footer {
@@ -233,38 +202,9 @@ footer {
   color: white;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 @media (max-width: 768px) {
-  body {
-    padding: 0 1rem;
-    font-size: 16px;
-  }
-
-  #hero h1 {
-    font-size: 2rem;
-  }
-
-  #hero p {
-    font-size: 1.2rem;
-  }
-
-  #hero a {
-    font-size: 1rem;
-    padding: 0.6rem 1.5rem;
-  }
-
-  nav {
-    display: flex;
-  }
-
-  .tabs {
-    flex-wrap: wrap;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+  body { padding: 0 1rem; font-size: 16px; }
+  nav { display: flex; }
+  .tabs { flex-wrap: wrap; }
+  img { max-width: 100%; height: auto; }
 }
