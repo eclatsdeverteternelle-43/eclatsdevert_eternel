@@ -107,14 +107,42 @@ nav a:hover {
   background: #388e3c;
 }
 /* =========================
-   IMAGES SPÉCIFIQUES
+   LOGO SERVICES À LA PERSONNE
 ========================= */
-#accueil .sap-logo {
-  max-width: 180px;   /* largeur maximale */
-  width: 50%;         /* largeur relative à l’écran */
-  height: auto;       /* conserve les proportions */
+.sap-logo {
   display: block;
-  margin: 20px auto 0; /* centré avec un petit espace au-dessus */
+  margin: 1.5rem auto;       /* centré verticalement */
+  max-width: 160px;
+  width: 160px;
+  height: auto;
+  border-radius: 12px;       /* coins arrondis */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* ombre douce */
+  background: #ffffff;       /* fond blanc pour détacher du hero */
+  padding: 8px;              /* petit espace entre logo et fond */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol */
+.sap-logo:hover {
+  transform: translateY(-4px);     /* léger effet “flottant” */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35); /* ombre un peu plus forte */
+}
+
+/* Responsive : plus petit sur mobile */
+@media (max-width: 600px) {
+  .sap-logo {
+    max-width: 120px;
+    width: 120px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sap-logo {
+    max-width: 100px;
+    width: 100px;
+    padding: 4px;
+  }
 }
 /* =========================
    CONTENU
