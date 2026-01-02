@@ -13,7 +13,8 @@
   color: white;
   padding: 0 2rem;
   position: relative; /* nécessaire pour l'overlay */
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 .tabs {
   display: flex;
@@ -141,8 +142,8 @@ img {
     padding: 0 1rem;
     font-size: 16px;
   }
-  nav {
-    display: none; /* ou remplacer par menu hamburger */
+ nav {
+    display: flex;
   }
   img {
     max-width: 100%;
