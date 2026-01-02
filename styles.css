@@ -150,3 +150,37 @@ img {
     height: auto;
   }
 }
+/* =========================
+   CORRECTIONS MENU MOBILE
+   ========================= */
+
+/* Empêche les parents de couper le menu */
+html, body {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* Header et navigation toujours visibles */
+header,
+nav {
+  position: relative;
+  overflow: visible;
+  z-index: 10000;
+}
+
+/* Menu visible sur mobile */
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Sécurité : le hero ne masque rien au-dessus */
+#hero {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
