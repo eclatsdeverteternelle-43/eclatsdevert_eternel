@@ -106,7 +106,16 @@ nav a {
 nav a:hover {
   background: #388e3c;
 }
-
+/* =========================
+   IMAGES SPÉCIFIQUES
+========================= */
+#accueil .sap-logo {
+  max-width: 180px;   /* largeur maximale */
+  width: 50%;         /* largeur relative à l’écran */
+  height: auto;       /* conserve les proportions */
+  display: block;
+  margin: 20px auto 0; /* centré avec un petit espace au-dessus */
+}
 /* =========================
    CONTENU
 ========================= */
