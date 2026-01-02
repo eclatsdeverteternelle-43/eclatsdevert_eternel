@@ -15,6 +15,16 @@
   position: relative; /* nécessaire pour l'overlay */
   overflow: hidden;
 }
+.tabs {
+  display: flex;
+  overflow-x: auto;          /* autorise le scroll horizontal */
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabs button {
+  flex: 0 0 auto;            /* empêche les boutons de se réduire */
+}
 
 /* Overlay sombre semi-transparent */
 #hero::after {
