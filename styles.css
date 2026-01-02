@@ -98,3 +98,17 @@ nav a {
     font-size: 1.1rem;
   }
 }
+/* =========================
+   CORRECTION ONGLET MENU
+   ========================= */
+
+nav {
+  flex-wrap: nowrap;        /* empêche le retour à la ligne */
+  overflow-x: auto;         /* autorise le scroll horizontal */
+  -webkit-overflow-scrolling: touch;
+}
+
+nav a {
+  flex: 0 0 auto;           /* empêche les onglets de se réduire */
+  white-space: nowrap;
+}
