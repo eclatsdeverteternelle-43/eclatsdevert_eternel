@@ -190,7 +190,7 @@ footer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 50%; /* largeur initiale de l'image "après" */
   height: 100%;
   overflow: hidden;
   z-index: 2;
@@ -199,7 +199,7 @@ footer {
 .before-after-slider .slider-handle {
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 50%; /* même que largeur initiale */
   width: 4px;
   height: 100%;
   background: #2e7d32;
@@ -207,6 +207,13 @@ footer {
   z-index: 3;
   transform: translateX(-50%);
 }
+
+/* Empêche le navigateur de sélectionner le texte pendant le drag */
+.before-after-slider {
+  touch-action: none;
+  user-select: none;
+}
+
 
 /* =========================
    RESPONSIVE
