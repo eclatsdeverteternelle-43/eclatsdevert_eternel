@@ -1,7 +1,6 @@
 /* =========================
    BASE GÉNÉRALE
-   ========================= */
-
+========================= */
 * {
   box-sizing: border-box;
 }
@@ -9,12 +8,13 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f8f8; /* ou ce que tu veux */
 }
 
 /* =========================
-   MENU (SIMPLE ET FIABLE)
-   ========================= */
-
+   MENU
+========================= */
 header {
   position: sticky;
   top: 0;
@@ -24,26 +24,26 @@ header {
 
 nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   padding: 12px 16px;
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 /* =========================
    HERO
-   ========================= */
-
+========================= */
 #hero {
   min-height: 80vh;
-  background-image: url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/7e368167e4f2a74f36657cbcfdf258c008eeceb0/banniere.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url("https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/7e368167e4f2a74f36657cbcfdf258c008eeceb0/banniere.png") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,7 +54,6 @@ nav a {
   position: relative;
 }
 
-/* overlay */
 #hero::after {
   content: "";
   position: absolute;
@@ -66,10 +65,6 @@ nav a {
   position: relative;
   z-index: 1;
 }
-
-/* =========================
-   TEXTE HERO
-   ========================= */
 
 #hero h1 {
   font-size: 3rem;
@@ -83,8 +78,7 @@ nav a {
 
 /* =========================
    RESPONSIVE
-   ========================= */
-
+========================= */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -98,74 +92,13 @@ nav a {
     font-size: 1.1rem;
   }
 }
+
 /* =========================
-   CORRECTION ONGLET MENU
-   ========================= */
-
-nav {
-  flex-wrap: nowrap;        /* empêche le retour à la ligne */
-  overflow-x: auto;         /* autorise le scroll horizontal */
-  -webkit-overflow-scrolling: touch;
-}
-
-nav a {
-  flex: 0 0 auto;           /* empêche les onglets de se réduire */
-  white-space: nowrap;
-}
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f8f8f8;
-}
-
-.tabs {
-  display: flex;
-  overflow-x: auto;
-  background: #2e7d32;
-}
-
-.tabs button {
-  flex: 0 0 auto;
-  padding: 1rem;
-  border: none;
-  background: none;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.tabs button.active {
-  background: #1b4d24;
-}
-
-#hero {
-  min-height: 80vh;
-  background: url("https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/banniere.png") center/cover no-repeat;
-  color: white;
-  text-align: center;
-  padding: 2rem;
-}
-
-.tab-content {
-  display: none;
-  padding: 2rem;
-  background: white;
-  margin: 1rem;
-  border-radius: 8px;
-}
-
-.tab-content.active {
-  display: block;
-}
-
+   FOOTER
+========================= */
 footer {
   text-align: center;
   padding: 1rem;
   background: #2e7d32;
   color: white;
 }
-
