@@ -1,391 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Éclats de vert & Éternel - Entretien espaces verts & sépultures</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0 1rem;
-      background: #f8f8f8;
-      color: #333;
-      font-size: 16px;
-    }
-    } 
-    img {
-      max-width:100%;
-      height: auto;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Éclats de Vert & Éternel</title>
 
-    /* Bandeau d'accueil (hero) */
-    #hero {
-      background-image: url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/banniere.png'); /* lien raw GitHub */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      padding: 0 2rem;
-      position: relative;
-    }
+  <!-- CSS EXTERNE -->
+  <link rel="stylesheet" href="style.css">
 
-    #hero .logo {
-      max-height: 80px;
-      margin-bottom: 1rem;
-    }
-
-    #hero h1 {
-      font-size: 3rem;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
-      margin: 0;
-    }
-
-    #hero p {
-      font-size: 1.5rem;
-      max-width: 700px;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-      margin: 1rem 0;
-    }
-
-    #hero a {
-      margin-top: 1.5rem;
-      padding: 0.8rem 2rem;
-      background-color: #2e7d32;
-      color: white;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-    }
-
-    #hero a:hover {
-      background-color: #1b4d24;
-    }
-
-    /* Compteur */
-    #counter {
-      margin-top: 1rem;
-    }
-
-    /* Onglets */
-    .tabs {
-      display: flex;
-      justify-content: center;
-      background: #4caf50;
-    }
-
-    .tabs button {
-      background: none;
-      border: none;
-      padding: 1rem 2rem;
-      cursor: pointer;
-      font-size: 1rem;
-      color: white;
-      transition: background 0.3s;
-    }
-
-    .tabs button:hover,
-    .tabs button.active {
-      background: #388e3c;
-    }
-
-    .tab-content {
-      display: none;
-      padding: 2rem;
-      background: white;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin: 1rem;
-      border-radius: 8px;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #2e7d32;
-      color: white;
-      margin-top: 2rem;
-    }
-
-    /* Images dans les sections */
-    .tab-content img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-top: 1rem;
-    }
-
-  </style>
+  <!-- reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
+
 <body>
 
-<!-- Bandeau d'accueil -->
+<header>
+  <div class="tabs">
+    <button class="tab-link active" data-tab="accueil">Accueil</button>
+    <button class="tab-link" data-tab="espaces">Entretien espaces verts</button>
+    <button class="tab-link" data-tab="sepultures">Entretien sépultures</button>
+    <button class="tab-link" data-tab="contact">Contact</button>
+  </div>
+</header>
+
 <section id="hero">
-  <img src="logo.png" alt="Logo Éclats de vert & Éternel" class="logo" />
+  <img src="logo.png" alt="Logo Éclats de Vert & Éternel" class="logo">
   <h1>Éclats de Vert & Éternel</h1>
   <p>L’entretien de vos espaces verts et sépultures, avec soin et proximité.</p>
-  <a href="#contact">Demander un devis gratuit</a>
-
-  <!-- Compteur -->
-  <div id="counter">
-    <a href="https://www.hitwebcounter.com/" target="_blank">
-      <img src="https://hitwebcounter.com/counter/counter.php?page=21454336&style=0001&nbdigits=5&type=page&initCount=0" 
-           title="Free Tools" alt="Free Tools" border="0" />
-    </a>
-  </div>
+  <a href="#contact" class="cta">Demander un devis gratuit</a>
 </section>
 
-<!-- Navigation par onglets -->
-<div class="tabs">
-  <button class="tab-link active" data-tab="accueil">Accueil</button>
-  <button class="tab-link" data-tab="espaces">Entretien espaces verts</button>
-  <button class="tab-link" data-tab="sepultures">Entretien sépultures</button>
-  <button class="tab-link" data-tab="contact">Contact</button>
-</div>
-
-<!-- Contenus -->
 <main>
+
   <section id="accueil" class="tab-content active">
     <h2>Bienvenue</h2>
     <p>
-      <strong>Petite structure indépendante</strong>, <em>Éclats de Vert & Éternel</em> met 
-      <strong>l’humain et la nature</strong> au cœur de ses engagements.<br>
-      Nous proposons l’<strong>entretien d’espaces verts</strong> et l’<strong>entretien de sépultures</strong> 
-      dans un rayon de <strong>25 km autour de Romans</strong>.<br><br>
-      Pour les demandes au-delà de cette zone, un <strong>devis personnalisé</strong> peut être établi.
+      Petite structure indépendante, Éclats de Vert & Éternel propose
+      l’entretien d’espaces verts et de sépultures dans un rayon de 25 km.
     </p>
-    <!-- Logo Services à la Personne + Explication -->
-<div style="text-align:center; margin-top:30px;">
-  <img src="https://github.com/eclatsdeverteternelle-43/eclatsdevert_eternel/blob/c18a2b1c2cfcd62513823dc2da7ba6a0be67723e/SAP.png" 
-       alt="Logo Services à la Personne"
-       style="width:180px; max-width:90%;">/>
-
-  <p style="font-size:1.2rem; font-weight:bold; margin-top:15px;">
-    💡 Grâce à l’agrément « Services à la Personne », vous bénéficiez de 
-    <span style="color:#2e7d32;">50% de crédit d’impôt</span> sur toutes nos prestations d’entretien.
-  </p>
-</div>
-
-
-    <!-- Avis Google -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-47fb5db3-3d3c-49cc-8a28-113422fdf537" data-elfsight-app-lazy></div>
-  
-  
   </section>
 
   <section id="espaces" class="tab-content">
     <h2>Entretien des espaces verts</h2>
     <ul>
-      <li>Taille d’arbustes, nettoyage de massifs</li>
-      <li>Tonte de pelouse, désherbage</li>
-      <li>Entretien régulier ou ponctuel</li>
-      <li>Nos services sont proposés au forfait, plutôt qu'à un tarif horaire.</li>
-
-      
-      <div class="before-after-slider">
-  <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant_1.png" alt="Avant" class="before">
-  <div class="after-wrapper">
-    <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres_1.png" alt="Après" class="after">
-  
-  </div>
-  </div>
-  <div class="slider-handle"></div>
-        <div class="before-after-slider">
-  <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant_2.png" alt="Avant" class="before">
-  <div class="after-wrapper">
-    <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres_2.png" alt="Après" class="after">
-  </div>
-  </div>
-  <div class="slider-handle"></div>
-          <div class="before-after-slider">
-  <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant_3.png" alt="Avant" class="before">
-  <div class="after-wrapper">
-     <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres_3.png" alt="Après" class="after">
-  </div>
-  </div>
-  <div class="slider-handle"></div>
-</div>
-
-<style>
-.before-after-slider {
-  position: relative;
-  width: 100%;
-  max-width: 700px;
-  height: 400px;
-  margin: 1rem auto;
-  overflow: hidden;
-}
-
-.before-after-slider img.before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.before-after-slider .after-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%; /* Largeur initiale du "après" */
-  height: 100%;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.before-after-slider img.after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.before-after-slider .slider-handle {
-  position: absolute;
-  top: 0;
-  left: 50%; /* même que largeur initiale */
-  width: 4px;
-  height: 100%;
-  background: #fff;
-  cursor: ew-resize;
-  z-index: 3;
-}
-.before-after-slider {
-  position: relative;
-  width: 100%;
-  max-width: 700px;
-  height: 400px;
-  margin: 2rem auto; /* ← espace vertical entre chaque */
-  overflow: hidden;
-  border-radius: 8px;
-}
-.before-after-slider {
-  touch-action: none; /* empêche le défilement du navigateur pendant le drag */
-  user-select: none;  /* évite la sélection de texte pendant le drag */
-}
-
-</style>
+      <li>Tonte, taille, désherbage</li>
+      <li>Entretien ponctuel ou régulier</li>
+      <li>Prestations au forfait</li>
     </ul>
   </section>
 
   <section id="sepultures" class="tab-content">
     <h2>Entretien des sépultures</h2>
     <ul>
-      <li>Nettoyage des pierres tombales</li>
-      <li>Désherbage et fleurissement</li>
-      <li>Entretien régulier ou ponctuel</li>
+      <li>Nettoyage</li>
+      <li>Désherbage</li>
+      <li>Fleurissement</li>
     </ul>
-
-    <h2>Tarifs</h2>
-    <p>Vous trouverez ci-après les tarifs appliqués pour l'entretien des sépultures.</p>
-
-    <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 8px rgba(63,69,81,0.16);">
-      <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
-        src="https://www.canva.com/design/DAGwnvRmzKc/Bloaw6aFtCBxw0vPQCWS4Q/view?embed" allowfullscreen>
-      </iframe>
-    </div>
   </section>
 
-   <section id="contact" class="tab-content">
-    <h2>Contactez-nous</h2>
+  <section id="contact" class="tab-content">
+    <h2>Contact</h2>
     <form action="https://formspree.io/f/xyzpryor" method="POST">
-      <label for="name">Nom :</label><br>
-      <input type="text" id="name" name="name" required /><br><br>
-
-      <label for="email">Email :</label><br>
-      <input type="email" id="email" name="email" required /><br><br>
-
-      <label for="telephone">Téléphone :</label><br>
-      <input type="tel" id="telephone" name="telephone" required /><br><br>
-
-      <label for="message">Message :</label><br>
-      <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
+      <input type="text" name="name" placeholder="Nom" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Message" required></textarea>
       <div class="g-recaptcha" data-sitekey="6LfiINorAAAAANH6dxsH1TM7I4o68wuX-WSimDnM"></div>
       <button type="submit">Envoyer</button>
     </form>
-    <p>
-      Ou directement : 
-      <a href="mailto:eclatsdeverteternelle@gmail.com">eclatsdeverteternelle@gmail.com</a> – 06 75 38 61 59
-    </p>
   </section>
+
 </main>
 
 <footer>
-  &copy; 2025 Éclats de Vert & Éternel - Tous droits réservés
-  <br><br>
-
-  <a href="https://g.page/r/CURTefQcap7REBM/review" 
-     target="_blank"
-     style="padding: 10px 18px; background:#ffffff; color:#2e7d32; border-radius:8px; text-decoration:none; font-weight:bold;">
-    ⭐ Laisser un avis sur Google
-  </a>
+  © 2025 Éclats de Vert & Éternel
 </footer>
 
-
-<!-- Script onglets -->
+<!-- SCRIPT ONGLET (PROPRE) -->
 <script>
-  const tabLinks = document.querySelectorAll('.tab-link');
-  const tabContents = document.querySelectorAll('.tab-content');
+  const buttons = document.querySelectorAll('.tab-link');
+  const sections = document.querySelectorAll('.tab-content');
 
-  tabLinks.forEach(button => {
-    button.addEventListener('click', () => {
-      const target = button.getAttribute('data-tab');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
 
-      // Désactive tous les onglets et contenus
-      tabLinks.forEach(btn => btn.classList.remove('active'));
-      tabContents.forEach(content => content.classList.remove('active'));
-
-      // Active l'onglet et le contenu correspondant
-      button.classList.add('active');
-      document.getElementById(target).classList.add('active');
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
     });
   });
-</script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-<script>
-document.querySelectorAll('.before-after-slider').forEach(slider => {
-  const afterWrapper = slider.querySelector('.after-wrapper');
-  const handle = slider.querySelector('.slider-handle');
-
-  let isDragging = false;
-
-  const startDrag = e => { isDragging = true; };
-  const stopDrag = e => { isDragging = false; };
-  const moveSlider = e => {
-    if (!isDragging) return;
-    const rect = slider.getBoundingClientRect();
-    let x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
-    x = Math.max(0, Math.min(x, rect.width));
-    afterWrapper.style.width = x + 'px';
-    handle.style.left = x + 'px';
-  };
-
-  slider.addEventListener('mousedown', startDrag);
-  slider.addEventListener('touchstart', startDrag);
-  window.addEventListener('mouseup', stopDrag);
-  window.addEventListener('touchend', stopDrag);
-  window.addEventListener('mousemove', moveSlider);
-  window.addEventListener('touchmove', moveSlider);
-});
 </script>
 
 </body>
