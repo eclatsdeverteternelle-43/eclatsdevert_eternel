@@ -2,94 +2,63 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Éclats de Vert & Éternel</title>
-
-  <!-- CSS EXTERNE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Site</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- reCAPTCHA -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
-
 <body>
 
-<header>
+  <!-- HEADER ET MENU -->
+  <header>
+    <nav>
+      <a href="#" class="active" data-tab="home">Accueil</a>
+      <a href="#" data-tab="page1">Page 1</a>
+      <a href="#" data-tab="page2">Page 2</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+    <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/7e368167e4f2a74f36657cbcfdf258c008eeceb0/logo.png" alt="Logo" class="logo">
+    <h1>Bienvenue sur mon site</h1>
+    <p>Découvrez nos services et projets à travers ce site.</p>
+    <a href="#page1">Découvrir</a>
+  </section>
+
+  <!-- TABS -->
   <div class="tabs">
-    <button class="tab-link active" data-tab="accueil">Accueil</button>
-    <button class="tab-link" data-tab="espaces">Entretien espaces verts</button>
-    <button class="tab-link" data-tab="sepultures">Entretien sépultures</button>
-    <button class="tab-link" data-tab="contact">Contact</button>
+    <button class="active" data-tab="home">Accueil</button>
+    <button data-tab="page1">Page 1</button>
+    <button data-tab="page2">Page 2</button>
   </div>
-</header>
 
-<section id="hero">
-  <img src="logo.png" alt="Logo Éclats de Vert & Éternel" class="logo">
-  <h1>Éclats de Vert & Éternel</h1>
-  <p>L’entretien de vos espaces verts et sépultures, avec soin et proximité.</p>
-  <a href="#contact" class="cta">Demander un devis gratuit</a>
-</section>
+  <!-- CONTENU DES PAGES -->
+  <div id="home" class="tab-content active">
+    <h2>Accueil</h2>
+    <p>Contenu principal de l'accueil.</p>
+    <!-- Slider Avant/Après -->
+    <div class="before-after-slider" id="slider1">
+      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant.png" alt="Avant">
+      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres.png" class="after" alt="Après">
+      <div class="slider-handle"></div>
+    </div>
+  </div>
 
-<main>
+  <div id="page1" class="tab-content">
+    <h2>Page 1</h2>
+    <p>Contenu de la page 1.</p>
+  </div>
 
-  <section id="accueil" class="tab-content active">
-    <h2>Bienvenue</h2>
-    <p>
-      Petite structure indépendante, Éclats de Vert & Éternel propose
-      l’entretien d’espaces verts et de sépultures dans un rayon de 25 km.
-    </p>
-  </section>
+  <div id="page2" class="tab-content">
+    <h2>Page 2</h2>
+    <p>Contenu de la page 2.</p>
+  </div>
 
-  <section id="espaces" class="tab-content">
-    <h2>Entretien des espaces verts</h2>
-    <ul>
-      <li>Tonte, taille, désherbage</li>
-      <li>Entretien ponctuel ou régulier</li>
-      <li>Prestations au forfait</li>
-    </ul>
-  </section>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Mon Site. Tous droits réservés.</p>
+  </footer>
 
-  <section id="sepultures" class="tab-content">
-    <h2>Entretien des sépultures</h2>
-    <ul>
-      <li>Nettoyage</li>
-      <li>Désherbage</li>
-      <li>Fleurissement</li>
-    </ul>
-  </section>
-
-  <section id="contact" class="tab-content">
-    <h2>Contact</h2>
-    <form action="https://formspree.io/f/xyzpryor" method="POST">
-      <input type="text" name="name" placeholder="Nom" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Message" required></textarea>
-      <div class="g-recaptcha" data-sitekey="6LfiINorAAAAANH6dxsH1TM7I4o68wuX-WSimDnM"></div>
-      <button type="submit">Envoyer</button>
-    </form>
-  </section>
-
-</main>
-
-<footer>
-  © 2025 Éclats de Vert & Éternel
-</footer>
-
-<!-- SCRIPT ONGLET (PROPRE) -->
-<script>
-  const buttons = document.querySelectorAll('.tab-link');
-  const sections = document.querySelectorAll('.tab-content');
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      sections.forEach(s => s.classList.remove('active'));
-
-      btn.classList.add('active');
-      document.getElementById(btn.dataset.tab).classList.add('active');
-    });
-  });
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
