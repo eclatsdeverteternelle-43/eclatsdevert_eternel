@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Éclats de vert & Éternel - Contact</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Éclats de Vert & Éternel - Contact</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="espaces.html">Entretien espaces verts</a>
-    <a href="sepultures.html">Entretien sépultures</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+<section id="hero">
+  <img src="logo.png" alt="Logo Éclats de vert & Éternel" class="logo">
+  <h1>Contactez-nous</h1>
+  <p>Une question ? Un devis ? Contactez-nous directement.</p>
+</section>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="espaces.html">Entretien espaces verts</a>
+  <a href="sepultures.html">Entretien sépultures</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
 <main>
-  <h2>Contactez-nous</h2>
   <form action="https://formspree.io/f/xyzpryor" method="POST">
-    <input type="text" name="name" placeholder="Nom" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="tel" name="telephone" placeholder="Téléphone" required>
-    <textarea name="message" placeholder="Message" required></textarea>
+    <label for="name">Nom :</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email :</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="telephone">Téléphone :</label><br>
+    <input type="tel" id="telephone" name="telephone" required><br><br>
+
+    <label for="message">Message :</label><br>
+    <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
     <div class="g-recaptcha" data-sitekey="6LfiINorAAAAANH6dxsH1TM7I4o68wuX-WSimDnM"></div>
     <button type="submit">Envoyer</button>
   </form>
+
+  <p>
+    Ou directement : 
+    <a href="mailto:eclatsdeverteternelle@gmail.com">eclatsdeverteternelle@gmail.com</a> – 06 75 38 61 59
+  </p>
 </main>
 
 <footer>
-  &copy; 2025 Éclats de Vert & Éternel
+  &copy; 2025 Éclats de Vert & Éternel - Tous droits réservés
 </footer>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
