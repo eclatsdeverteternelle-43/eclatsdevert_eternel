@@ -161,7 +161,17 @@ footer {
   color: white;
   margin-top: 2rem;
 }
+/* =========================
+   liste réchampissage
+========================= *
+/liste-rechampissage {
+  list-style-type: "◈  ";
+  padding-left: 20px;
+}
 
+.liste-rechampissage li {
+  margin-bottom: 8px;
+}
 /* =========================
    SLIDER AVANT/APRES
 ========================= */
