@@ -150,7 +150,9 @@ nav a:hover {
 main {
   padding: 2rem;
 }
-
+main p {
+  text-align: justify;
+}
 /* =========================
    FOOTER
 ========================= */
