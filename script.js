@@ -19,28 +19,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // =========================
-  // Slider avant/après
-  // =========================
-  document.querySelectorAll('.before-after-slider').forEach(slider => {
-    const afterWrapper = slider.querySelector('.after-wrapper');
-    const handle = slider.querySelector('.slider-handle');
+ // =========================
+// Slider avant / après
+// =========================
+document.querySelectorAll('.before-after-slider').forEach(slider => {
+  const afterWrapper = slider.querySelector('.after-wrapper');
+  const handle = slider.querySelector('.slider-handle');
 
-    let isDragging = false;
+  let isDragging = false;
 
-    const startDrag = e => { isDragging = true; };
-    const stopDrag = e => { isDragging = false; };
-    const moveSlider = e => {
-      if (!isDragging) return;
-      const rect = slider.getBoundingClientRect();
-      let x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
-      x = Math.max(0, Math.min(x, rect.width));
-      afterWrapper.style.width = x + 'px';
-      handle.style.left = x + 'px';
-    };
+  // Position initiale (50%)
+  const rect = slider.getBoundingClientRect();
+  const startX = rect.width / 2;
+  afterWrapper.style.width = startX + 'px';
+  handle.style.left = startX + 'px';
 
-    slider.addEventListener('mousedown', startDrag);
-    slider.addEventListener('touchstart', startDrag);
+  const getX = e =>
+    (e.touches ? e.touches[0].clientX : e.clientX);
+
+  const startDrag = () => { isDragging = true; };
+  const stopDrag = () => { isDragging = false; };
+
+  const moveSlider = e => {
+    if (!isDragging) return;
+
+    const rect = slider.getBoundingClientRect();
+    let x = getX(e) - rect.left;
+    x = Math.max(0, Math.min(x, rect.width));
+
+    afterWrapper.style.width = x + 'px';
+    handle.style.left = x + 'px';
+  };
+
+  handle.addEventListener('mousedown', startDrag);
+  handle.addEventListener('touchstart', startDrag);
     window.addEventListener('mouseup', stopDrag);
     window.addEventListener('touchend', stopDrag);
     window.addEventListener('mousemove', moveSlider);
