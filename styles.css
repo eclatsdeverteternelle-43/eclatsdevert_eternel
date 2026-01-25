@@ -173,6 +173,17 @@ footer {
   margin-bottom: 8px;
 }
 /* =========================
+   liste remplacement
+========================= *
+/liste-remplacement{
+  list-style-type: "◈  ";
+  padding-left: 20px;
+}
+
+.liste-remplacement li {
+  margin-bottom: 8px;
+}
+/* =========================
    SLIDER AVANT/APRES
 ========================= */
 .before-after-slider {
