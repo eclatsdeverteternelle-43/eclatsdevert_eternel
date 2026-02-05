@@ -12,53 +12,33 @@ a:hover { text-decoration: underline; }
 
 img { display: block; max-width: 100%; height: auto; }
 
-/* ===== Hero ===== */
+/* ===== SECTION HERO ===== */
 #hero {
-  background: url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/banniere.png') center/cover no-repeat;
+  /* On utilise une seule déclaration propre pour le fond */
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), 
+              url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/hero-bg.jpg') center/cover no-repeat;
   color: white;
-  text-align: center;
   padding: 80px 20px;
-  position: relative;
-}
-#hero::after {
-  content: "";
-  background: rgba(0,0,0,0.35);
-  position: absolute;
-  top:0; left:0; width:100%; height:100%;
-}
-/* Hero ajusté pour logo centré */
-/* ===== Hero ajusté pour logo centré ===== */
-#hero {
-  background: url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/hero-bg.jpg') center/cover no-repeat;
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
-  position: relative;
-}
-
-#hero::after {
-  content: "";
-  background: rgba(0,0,0,0.35);
-  position: absolute;
-  top:0; left:0; width:100%; height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
 }
 
 #hero .hero-content {
-  position: relative;
-  z-index: 1;
   max-width: 900px;
-  margin: 0 auto;
-  display: flex;             /* flex pour empiler les éléments */
-  flex-direction: column;    /* logo + titre + sous-titre + bouton */
-  align-items: center;       /* centre horizontalement */
-  justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Aligne logo, titre et bouton en colonne */
+  align-items: center;    /* CENTRE tout horizontalement */
   text-align: center;
 }
 
 .hero-logo {
-  display: block;             /* obligatoire pour margin auto */
-  margin: 0 auto 20px auto;   /* centre horizontal + espace en bas */
-  height: 120px;              /* ajuster la taille selon ton logo */
+  display: block;
+  margin: 0 auto 20px auto;
+  height: 120px;
+  width: auto;
 }
 
 .hero-title {
@@ -66,17 +46,16 @@ img { display: block; max-width: 100%; height: auto; }
   margin: 0 0 10px 0;
   font-weight: 700;
   color: #ffffff;
-  text-align: center;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
   margin-bottom: 25px;
   color: #ffffff;
-  text-align: center;
 }
 
 .button {
+  display: inline-block;
   background-color: #4caf50;
   color: white;
   padding: 12px 25px;
@@ -85,8 +64,7 @@ img { display: block; max-width: 100%; height: auto; }
   transition: 0.3s;
 }
 
-.button:hover { background-color: #388e3c; }
-
+.button:hover { background-color: #388e3c; text-decoration: none; }
 
 /* ===== Navigation ===== */
 nav {
@@ -95,6 +73,7 @@ nav {
   gap: 20px;
   background-color: #f7faf5;
   padding: 15px 0;
+  flex-wrap: wrap; /* Évite que le menu déborde sur mobile */
 }
 nav a.active { color: #2e7d32; }
 
@@ -113,21 +92,22 @@ nav a.active { color: #2e7d32; }
 #accueil ul { list-style: none; padding-left: 0; margin-bottom: 15px; }
 #accueil ul li { position: relative; padding-left: 30px; margin-bottom: 10px; }
 #accueil ul li::before { content: '🌿'; position: absolute; left: 0; }
+
 .contact-btn { display: inline-block; background-color: #4caf50; color: white; padding: 12px 25px; border-radius: 8px; font-weight: bold; margin-top: 20px; }
-.contact-btn:hover { background-color: #388e3c; }
+.contact-btn:hover { background-color: #388e3c; text-decoration: none; }
 
 /* ===== Zone d'intervention ===== */
 .zone-intervention {
   max-width: 900px;
   margin: 30px auto;
-  background-color: #dff0d8; /* vert clair */
+  background-color: #dff0d8;
   padding: 20px 25px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 .zone-intervention p {
   font-size: 1rem;
-  text-align: justify;
+  text-align: center; /* Plus joli centré */
   margin: 0;
 }
 
@@ -166,9 +146,8 @@ nav a.active { color: #2e7d32; }
   max-width: 160px;
   width: 100%;
   height: auto;
-  display: block;
 }
-#sap p { font-size: 1rem; color: #2e7d32; }
+#sap p { font-size: 1rem; color: #2e7d32; margin: 0; }
 
 /* ===== Footer ===== */
 footer { text-align: center; padding: 30px 20px; background-color: #f7faf5; margin-top: 40px; font-size: 0.9rem; }
@@ -178,7 +157,6 @@ footer { text-align: center; padding: 30px 20px; background-color: #f7faf5; marg
   #hero .hero-title { font-size: 2rem; }
   #hero .hero-subtitle { font-size: 1.2rem; }
   #accueil h2 { font-size: 1.6rem; }
-  #accueil h3 { font-size: 1.2rem; }
   #services { grid-template-columns: 1fr; }
   #sap { flex-direction: column; text-align: center; }
 }
