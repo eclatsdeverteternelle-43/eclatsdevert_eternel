@@ -22,6 +22,31 @@ document.addEventListener('DOMContentLoaded', () => {
  // =========================
 // Slider avant / après
 // =========================
+
+  document.querySelectorAll('.before-after-slider').forEach(slider => {
+  const input = slider.querySelector('.slider-input');
+  const afterWrapper = slider.querySelector('.after-wrapper');
+  const afterImage = afterWrapper.querySelector('img');
+
+  // Fonction pour ajuster la taille de l'image de dessus
+  const updateSlider = (value) => {
+    afterWrapper.style.width = `${value}%`;
+    // On force l'image interne à garder la taille du conteneur parent
+    afterImage.style.width = `${slider.offsetWidth}px`;
+  };
+
+  input.addEventListener('input', (e) => {
+    updateSlider(e.target.value);
+  });
+
+  // Ajuste la taille si on tourne le téléphone (responsive)
+  window.addEventListener('resize', () => {
+    updateSlider(input.value);
+  });
+  
+  // Initialisation au chargement
+  updateSlider(50);
+});
 document.querySelectorAll('.before-after-slider').forEach(slider => {
   const input = slider.querySelector('.slider-input');
   const afterWrapper = slider.querySelector('.after-wrapper');
