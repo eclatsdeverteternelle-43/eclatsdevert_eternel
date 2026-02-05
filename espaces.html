@@ -3,82 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Éclats de vert & Éternel - Entretien espaces verts</title>
+  <title>Entretien Espaces Verts | Éclats de Vert & Éternel</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Hero -->
   <section id="hero">
-    <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/logo.png" alt="Logo" class="logo">
-    <h1>Éclats de Vert & Éternel</h1>
-    <p>L’entretien de vos espaces verts et sépultures, avec soin et proximité.</p>
-    <a href="contact.html">Demander un devis gratuit</a>
+    <div class="hero-content">
+      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/logo.png" 
+           alt="Logo" class="hero-logo">
+      <h1 class="hero-title">Éclats de Vert & Éternel</h1>
+      <p class="hero-subtitle">Entretien d’espaces verts et de sépultures à Geyssans</p>
+      <a href="contact.html" class="button">Demander un devis gratuit</a>
+    </div>
   </section>
 
-  <!-- Menu sous le Hero -->
   <nav>
     <a href="index.html">Accueil</a>
     <a href="espaces.html" class="active">Entretien espaces verts</a>
     <a href="sepultures.html">Entretien sépultures</a>
-    <a href="renovation.html" class="active"> Renovation sépultures</a>
-    <a href="Prestations.html">Nos autres prestations</a>
-    <a href="contact.html" class="active">Contact</a>
+    <a href="renovation.html">Rénovation sépultures</a>
+    <a href="prestations.html">Nos autres prestations</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- Contenu principal -->
   <main>
-    <h2>Entretien des espaces verts</h2>
-    <p>Nous proposons : taille d’arbustes, tonte de pelouse, désherbage, entretien régulier ou ponctuel.</p>
+    <section id="accueil"> <h2>Entretien des espaces verts</h2>
+      <p>Taille d’arbustes, tonte de pelouse, désherbage... Nous proposons un entretien régulier ou ponctuel pour sublimer votre jardin.</p>
 
-    <!-- Sliders avant/après -->
-    <section id="sliders">
-      <div class="before-after-slider">
-        <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant_1.png" class="before" alt="Avant">
-        <div class="after-wrapper">
-          <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres_1.png" class="after" alt="Après">
+      <div class="sliders-container">
+        
+        <div class="before-after-slider">
+          <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant_1.png" alt="Avant">
+          <div class="after-wrapper">
+            <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres_1.png" alt="Après">
+          </div>
+          <input type="range" min="0" max="100" value="50" class="slider-input">
+          <div class="slider-line"></div>
         </div>
-        <div class="slider-handle"></div>
-      </div>
 
-      <div class="before-after-slider">
-        <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant_2.png" class="before" alt="Avant">
-        <div class="after-wrapper">
-          <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres_2.png" class="after" alt="Après">
+        <div class="before-after-slider">
+          <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant_2.png" alt="Avant">
+          <div class="after-wrapper">
+            <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres_2.png" alt="Après">
+          </div>
+          <input type="range" min="0" max="100" value="50" class="slider-input">
+          <div class="slider-line"></div>
         </div>
-        <div class="slider-handle"></div>
-      </div>
 
-      <div class="before-after-slider">
-        <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/avant_3.png" class="before" alt="Avant">
-        <div class="after-wrapper">
-          <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/apres_3.png" class="after" alt="Après">
-        </div>
-        <div class="slider-handle"></div>
       </div>
     </section>
-    
-   <!-- Logo Services à la Personne -->
-    <div class="sap-logo">
-      <img src="https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/SAP.png" 
-           alt="Logo Services à la Personne">
-      <p>💡 Grâce à l’agrément « Services à la Personne », vous bénéficiez de <span style="color:#2e7d32;">50% de crédit d’impôt</span> sur toutes nos prestations d’entretien.</p>
-    </div>
-  
   </main>
 
-  <!-- Footer -->
   <footer>
-    &copy; 2025 Éclats de Vert & Éternel - Tous droits réservés
-    <br><br>
-    <a href="https://g.page/r/CURTefQcap7REBM/review" 
-       target="_blank"
-       style="padding: 10px 18px; background:#ffffff; color:#2e7d32; border-radius:8px; text-decoration:none; font-weight:bold;">
+    &copy; 2026 Éclats de Vert & Éternel - Tous droits réservés<br><br>
+    <a href="https://g.page/r/CURTefQcap7REBM/review" target="_blank" class="button" style="background: white; color: #2e7d32;">
       ⭐ Laisser un avis sur Google
     </a>
   </footer>
 
-  <!-- Script pour slider -->
   <script src="script.js"></script>
 </body>
 </html>
+
