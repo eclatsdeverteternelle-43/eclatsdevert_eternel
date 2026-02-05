@@ -26,27 +26,28 @@ img { display: block; max-width: 100%; height: auto; }
   position: absolute;
   top:0; left:0; width:100%; height:100%;
 }
-/* Hero ajusté pour logo centré au-dessus du texte */
+/* Hero ajusté pour logo centré */
 #hero .hero-content {
   position: relative;
   z-index: 1;
   max-width: 900px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column; /* empile logo + titre + texte */
-  align-items: center;    /* centre horizontalement */
+  flex-direction: column; /* empile logo + titre + sous-titre + bouton */
+  align-items: center;    /* centre horizontalement tout le contenu */
   justify-content: center;
   text-align: center;
 }
 
 .hero-logo {
-  height: 120px; /* tu peux ajuster la taille du logo */
-  margin-bottom: 20px; /* espace entre logo et titre */
+  display: block;     /* obligatoire pour centrer avec margin auto */
+  margin: 0 auto 20px auto; /* centre horizontalement et espace en bas */
+  height: 120px;      /* ajuste la taille du logo */
 }
 
 .hero-title {
   font-size: 3rem;
-  margin: 10px 0 5px 0; /* petit espace au-dessus et en dessous */
+  margin: 0 0 10px 0;
   font-weight: 700;
   color: #ffffff;
   text-align: center;
@@ -58,13 +59,13 @@ img { display: block; max-width: 100%; height: auto; }
   color: #ffffff;
   text-align: center;
 }
-.button { 
-  background-color: #4caf50; 
-  color: white; 
-  padding: 12px 25px; 
-  border-radius: 8px; 
-  font-weight: bold; 
-  transition: 0.3s; 
+.button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 .button:hover { background-color: #388e3c; }
 
