@@ -245,3 +245,40 @@ footer {
   line-height: 1.5;
   margin: 0;
 }
+/* ===== GRILLE DES SERVICES (Style de ta photo) ===== */
+#services {
+  max-width: 1000px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+.service-card {
+  background: #ffffff; /* Fond blanc pur */
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombre douce pour le relief */
+  text-align: center;
+  border-top: 6px solid #4caf50; /* La barre verte épaisse en haut comme sur l'image */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 200px; /* Assure que toutes les cartes ont la même hauteur */
+}
+
+.service-card h4 {
+  color: #2e7d32;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  margin: 0;
+}
