@@ -27,22 +27,38 @@ img { display: block; max-width: 100%; height: auto; }
   top:0; left:0; width:100%; height:100%;
 }
 /* Hero ajusté pour logo centré */
+/* ===== Hero ajusté pour logo centré ===== */
+#hero {
+  background: url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/hero-bg.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+}
+
+#hero::after {
+  content: "";
+  background: rgba(0,0,0,0.35);
+  position: absolute;
+  top:0; left:0; width:100%; height:100%;
+}
+
 #hero .hero-content {
   position: relative;
   z-index: 1;
   max-width: 900px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column; /* empile logo + titre + sous-titre + bouton */
-  align-items: center;    /* centre horizontalement tout le contenu */
+  display: flex;             /* flex pour empiler les éléments */
+  flex-direction: column;    /* logo + titre + sous-titre + bouton */
+  align-items: center;       /* centre horizontalement */
   justify-content: center;
   text-align: center;
 }
 
 .hero-logo {
-  display: block;     /* obligatoire pour centrer avec margin auto */
-  margin: 0 auto 20px auto; /* centre horizontalement et espace en bas */
-  height: 120px;      /* ajuste la taille du logo */
+  display: block;             /* obligatoire pour margin auto */
+  margin: 0 auto 20px auto;   /* centre horizontal + espace en bas */
+  height: 120px;              /* ajuster la taille selon ton logo */
 }
 
 .hero-title {
@@ -59,6 +75,7 @@ img { display: block; max-width: 100%; height: auto; }
   color: #ffffff;
   text-align: center;
 }
+
 .button {
   background-color: #4caf50;
   color: white;
@@ -67,7 +84,9 @@ img { display: block; max-width: 100%; height: auto; }
   font-weight: bold;
   transition: 0.3s;
 }
+
 .button:hover { background-color: #388e3c; }
+
 
 /* ===== Navigation ===== */
 nav {
