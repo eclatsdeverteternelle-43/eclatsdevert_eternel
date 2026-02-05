@@ -55,7 +55,6 @@ img { display: block; max-width: 100%; height: auto; }
   margin-bottom: 25px;
 }
 
-/* Bouton commun */
 .button, .contact-btn {
   display: inline-block;
   background-color: #4caf50;
@@ -87,7 +86,7 @@ nav a { color: #555; }
 nav a.active { color: #2e7d32; border-bottom: 2px solid #2e7d32; }
 
 /* ===== 4. Contenu & Sections ===== */
-#accueil, .page-section {
+#accueil, .page-section, .zone-intervention {
   background-color: #f7faf5;
   padding: 50px 20px;
   border-radius: 12px;
@@ -139,7 +138,6 @@ ul li::before { content: '🌿'; position: absolute; left: 0; }
   z-index: 2;
 }
 
-/* Fix pour l'image masquée (ne doit pas bouger) */
 .after-wrapper img {
   position: absolute;
   top: 0;
@@ -162,7 +160,64 @@ ul li::before { content: '🌿'; position: absolute; left: 0; }
   margin: 0;
 }
 
-/* ===== 6. AVIS GOOGLE ===== */
+/* ===== 6. GRILLE DES SERVICES (Style photo) ===== */
+#services {
+  max-width: 1000px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+.service-card {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-top: 6px solid #4caf50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 200px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card h4 {
+  color: #2e7d32;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===== 7. SAP & AVIS ===== */
+#sap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f7faf5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+#sap img { max-width: 120px; }
+
 #avis-google {
   max-width: 1000px;
   margin: 50px auto;
@@ -183,16 +238,10 @@ ul li::before { content: '🌿'; position: absolute; left: 0; }
   border-left: 5px solid #4caf50;
 }
 
-.avis-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
 .avis-nom { font-weight: bold; }
 .avis-etoiles { color: #fbbc05; }
 
-/* ===== 7. Footer ===== */
+/* ===== 8. Footer & Responsive ===== */
 footer {
   text-align: center;
   padding: 40px 20px;
@@ -201,84 +250,10 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ===== 8. Responsive ===== */
 @media (max-width: 768px) {
   .hero-title { font-size: 2.2rem; }
   .hero-subtitle { font-size: 1.1rem; }
   #hero { min-height: 350px; }
   .before-after-slider { max-width: 100%; }
-}
-/* ===== GRILLE DES SERVICES (Les rectangles blancs) ===== */
-#services {
-  max-width: 1000px;
-  margin: 30px auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Aligne 3 colonnes sur PC, 1 sur mobile */
-  gap: 25px;
-  padding: 0 20px;
-}
-
-.service-card {
-  background: #ffffff; /* Le rectangle devient blanc */
-  padding: 30px 20px;
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Ombre pour l'effet relief */
-  text-align: center;
-  border-top: 5px solid #4caf50; /* Petite barre verte décorative en haut */
-  transition: transform 0.3s ease; /* Petit effet de mouvement au survol */
-}
-
-.service-card:hover {
-  transform: translateY(-5px); /* Le rectangle monte légèrement au survol */
-}
-
-.service-card h4 {
-  color: #2e7d32;
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  margin-top: 0;
-}
-
-.service-card p {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.5;
-  margin: 0;
-}
-/* ===== GRILLE DES SERVICES (Style de ta photo) ===== */
-#services {
-  max-width: 1000px;
-  margin: 40px auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 0 20px;
-}
-
-.service-card {
-  background: #ffffff; /* Fond blanc pur */
-  padding: 30px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombre douce pour le relief */
-  text-align: center;
-  border-top: 6px solid #4caf50; /* La barre verte épaisse en haut comme sur l'image */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 200px; /* Assure que toutes les cartes ont la même hauteur */
-}
-
-.service-card h4 {
-  color: #2e7d32;
-  font-size: 1.25rem;
-  margin-bottom: 15px;
-  margin-top: 0;
-  font-weight: 700;
-}
-
-.service-card p {
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.5;
-  margin: 0;
+  #sap { flex-direction: column; text-align: center; }
 }
