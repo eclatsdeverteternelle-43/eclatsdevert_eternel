@@ -39,18 +39,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const value = input.value;
             // Déplace la ligne de séparation
             afterWrapper.style.width = `${value}%`;
-            // Empêche l'image de "s'écraser" en lui redonnant la largeur du slider
-            afterImage.style.width = `${slider.offsetWidth}px`;
+            
+            // Correction pour Ordinateur : On force la largeur de l'image
+            // pour qu'elle ne soit pas écrasée par le conteneur After
+            if (slider.offsetWidth > 0) {
+                afterImage.style.width = slider.offsetWidth + 'px';
+            }
         };
 
         // Écoute les mouvements du curseur (souris ou doigt)
         input.addEventListener('input', updateSlider);
 
-        // Recalcule si on redimensionne la fenêtre (ex: passage paysage/portrait)
+        // Crucial pour Ordinateur : Recalculer quand l'image est totalement chargée
+        // et quand on redimensionne la fenêtre
+        window.addEventListener('load', updateSlider);
         window.addEventListener('resize', updateSlider);
 
-        // Lancement initial au milieu (50%)
-        updateSlider();
+        // Lancement initial (on force un petit délai pour être sûr que le rendu est prêt)
+        setTimeout(updateSlider, 100);
     });
 
 });
