@@ -208,3 +208,40 @@ footer {
   #hero { min-height: 350px; }
   .before-after-slider { max-width: 100%; }
 }
+/* ===== GRILLE DES SERVICES (Les rectangles blancs) ===== */
+#services {
+  max-width: 1000px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Aligne 3 colonnes sur PC, 1 sur mobile */
+  gap: 25px;
+  padding: 0 20px;
+}
+
+.service-card {
+  background: #ffffff; /* Le rectangle devient blanc */
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Ombre pour l'effet relief */
+  text-align: center;
+  border-top: 5px solid #4caf50; /* Petite barre verte décorative en haut */
+  transition: transform 0.3s ease; /* Petit effet de mouvement au survol */
+}
+
+.service-card:hover {
+  transform: translateY(-5px); /* Le rectangle monte légèrement au survol */
+}
+
+.service-card h4 {
+  color: #2e7d32;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
