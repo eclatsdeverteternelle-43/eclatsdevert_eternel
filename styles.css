@@ -10,6 +10,8 @@ body {
 a { text-decoration: none; color: #4caf50; font-weight: bold; }
 a:hover { text-decoration: underline; }
 
+img { display: block; max-width: 100%; height: auto; }
+
 /* ===== Hero ===== */
 #hero {
   background: url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/hero-bg.jpg') center/cover no-repeat;
@@ -24,36 +26,12 @@ a:hover { text-decoration: underline; }
   position: absolute;
   top:0; left:0; width:100%; height:100%;
 }
-#hero .hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto;
-}
-#hero .hero-logo {
-  height: 100px;
-  margin-bottom: 20px;
-}
-#hero .hero-title {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  font-weight: 700;
-  color: #ffffff;
-}
-#hero .hero-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 25px;
-  color: #ffffff;
-}
-#hero a.button {
-  background-color: #4caf50;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-#hero a.button:hover { background-color: #388e3c; }
+#hero .hero-content { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+.hero-logo { height: 100px; margin-bottom: 20px; }
+.hero-title { font-size: 3rem; margin-bottom: 10px; font-weight: 700; color: #ffffff; }
+.hero-subtitle { font-size: 1.5rem; margin-bottom: 25px; color: #ffffff; }
+.button { background-color: #4caf50; color: white; padding: 12px 25px; border-radius: 8px; font-weight: bold; transition: 0.3s; }
+.button:hover { background-color: #388e3c; }
 
 /* ===== Navigation ===== */
 nav {
@@ -65,7 +43,7 @@ nav {
 }
 nav a.active { color: #2e7d32; }
 
-/* ===== Section Accueil / Bienvenue ===== */
+/* ===== Bienvenue ===== */
 #accueil {
   background-color: #f7faf5;
   padding: 50px 20px;
@@ -74,56 +52,16 @@ nav a.active { color: #2e7d32; }
   max-width: 1000px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
-#accueil h2 { 
-  font-size: 2rem; 
-  color: #2e7d32; 
-  text-align: center; 
-  margin-bottom: 25px;
-}
-#accueil h3 { 
-  font-size: 1.4rem; 
-  color: #558b2f; 
-  margin-top: 25px; 
-  margin-bottom: 15px;
-}
-#accueil p { margin-bottom: 15px; font-size: 1rem; }
-#accueil ul {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 15px;
-}
-#accueil ul li {
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 10px;
-}
-#accueil ul li::before { 
-  content: '🌿'; 
-  position: absolute; 
-  left: 0;
-}
+#accueil h2 { font-size: 2rem; color: #2e7d32; text-align: center; margin-bottom: 25px; }
+#accueil h3 { font-size: 1.4rem; color: #558b2f; margin-top: 25px; margin-bottom: 15px; }
+#accueil p { margin-bottom: 15px; font-size: 1rem; text-align: justify; }
+#accueil ul { list-style: none; padding-left: 0; margin-bottom: 15px; }
+#accueil ul li { position: relative; padding-left: 30px; margin-bottom: 10px; }
+#accueil ul li::before { content: '🌿'; position: absolute; left: 0; }
+.contact-btn { display: inline-block; background-color: #4caf50; color: white; padding: 12px 25px; border-radius: 8px; font-weight: bold; margin-top: 20px; }
+.contact-btn:hover { background-color: #388e3c; }
 
-/* ===== Bouton contact ===== */
-#accueil .contact-btn {
-  display: inline-block;
-  background-color: #4caf50;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 8px;
-  font-weight: bold;
-  margin-top: 20px;
-  transition: 0.3s;
-}
-#accueil .contact-btn:hover { background-color: #388e3c; }
-
-/* ===== Section entreprise ===== */
-#entreprise {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 0 20px;
-}
-
-/* ===== Section services ===== */
+/* ===== Services ===== */
 #services {
   max-width: 1000px;
   margin: 30px auto;
@@ -132,22 +70,11 @@ nav a.active { color: #2e7d32; }
   gap: 25px;
   padding: 0 20px;
 }
-.service-card {
-  background-color: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
+.service-card { background-color: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; }
 .service-card h4 { color: #2e7d32; margin-bottom: 15px; }
 .service-card p { font-size: 0.95rem; }
 
-/* ===== Section SAP ===== */
+/* ===== SAP ===== */
 #sap {
   max-width: 1000px;
   margin: 30px auto;
@@ -159,17 +86,16 @@ nav a.active { color: #2e7d32; }
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
-#sap img { height: 80px; }
+#sap img {
+  max-width: 160px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
 #sap p { font-size: 1rem; color: #2e7d32; }
 
 /* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 30px 20px;
-  background-color: #f7faf5;
-  margin-top: 40px;
-  font-size: 0.9rem;
-}
+footer { text-align: center; padding: 30px 20px; background-color: #f7faf5; margin-top: 40px; font-size: 0.9rem; }
 
 /* ===== Responsive ===== */
 @media (max-width:768px) {
@@ -177,4 +103,6 @@ footer {
   #hero .hero-subtitle { font-size: 1.2rem; }
   #accueil h2 { font-size: 1.6rem; }
   #accueil h3 { font-size: 1.2rem; }
+  #services { grid-template-columns: 1fr; }
+  #sap { flex-direction: column; text-align: center; }
 }
