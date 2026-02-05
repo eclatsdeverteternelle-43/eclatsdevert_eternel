@@ -23,10 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // Slider avant / après
 // =========================
 document.querySelectorAll('.before-after-slider').forEach(slider => {
+  const input = slider.querySelector('.slider-input');
   const afterWrapper = slider.querySelector('.after-wrapper');
-  const handle = slider.querySelector('.slider-handle');
 
-  let isDragging = false;
+  input.addEventListener('input', (e) => {
+    const value = e.target.value;
+    afterWrapper.style.width = `${value}%`;
+  });
+});
 
   // Position initiale (50%)
   const rect = slider.getBoundingClientRect();
@@ -59,4 +63,5 @@ document.querySelectorAll('.before-after-slider').forEach(slider => {
     window.addEventListener('touchmove', moveSlider);
   });
 });
+
 
