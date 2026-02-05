@@ -163,3 +163,63 @@ footer { text-align: center; padding: 30px 20px; background-color: #f7faf5; marg
   #services { grid-template-columns: 1fr; }
   #sap { flex-direction: column; text-align: center; }
 }
+/* ===== STYLE DU SLIDER AVANT/APRÈS ===== */
+.sliders-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.before-after-slider {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  aspect-ratio: 4/3; /* Ajuste selon le format de tes photos */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.before-after-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.after-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Position de départ du curseur */
+  height: 100%;
+  overflow: hidden;
+  border-right: 3px solid white;
+}
+
+.after-wrapper img {
+  width: 700px; /* Doit correspondre à la max-width du parent */
+  height: 100%;
+}
+
+/* Le curseur invisible qui capte le mouvement */
+.slider-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  appearance: none;
+  cursor: ew-resize;
+  z-index: 10;
+}
+
+.slider-input::-webkit-slider-thumb {
+  appearance: none;
+  width: 5px;
+  height: 1000px;
+  background: white;
+}
