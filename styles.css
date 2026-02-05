@@ -109,4 +109,29 @@ nav a.active { color: #2e7d32; }
 #sap {
   max-width: 1000px;
   margin: 30px auto;
-  displa
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f7faf5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+#sap img {
+  height: 80px;
+  border-radius: 8px;
+}
+#sap p { font-size: 1rem; color: #2e7d32; }
+
+/* ===== Footer ===== */
+footer { text-align: center; padding: 30px 20px; background-color: #f7faf5; margin-top: 40px; font-size: 0.9rem; }
+
+/* ===== Responsive ===== */
+@media (max-width:768px) {
+  #hero .hero-title { font-size: 2rem; }
+  #hero .hero-subtitle { font-size: 1.2rem; }
+  #accueil h2 { font-size: 1.6rem; }
+  #accueil h3 { font-size: 1.2rem; }
+  #services { grid-template-columns: 1fr; }
+  #sap { flex-direction: column; text-align: center; }
+}
