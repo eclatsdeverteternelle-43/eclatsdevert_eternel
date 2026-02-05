@@ -12,25 +12,28 @@ a:hover { text-decoration: underline; }
 
 img { display: block; max-width: 100%; height: auto; }
 
-/* ===== SECTION HERO ===== */
+/* ===== SECTION HERO CORRIGÉE ===== */
 #hero {
-  /* On utilise une seule déclaration propre pour le fond */
-  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), 
-              url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/hero-bg.jpg') center/cover no-repeat;
+  /* On utilise bien banniere.png ici */
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
+              url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/banniere.png') center/cover no-repeat;
   color: white;
   padding: 80px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 350px;
+  min-height: 400px;
+  position: relative;
 }
 
 #hero .hero-content {
+  position: relative;
+  z-index: 2; /* Pour passer au-dessus du voile sombre */
   max-width: 900px;
   width: 100%;
   display: flex;
-  flex-direction: column; /* Aligne logo, titre et bouton en colonne */
-  align-items: center;    /* CENTRE tout horizontalement */
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
