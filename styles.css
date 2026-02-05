@@ -163,7 +163,70 @@ footer { text-align: center; padding: 30px 20px; background-color: #f7faf5; marg
   #services { grid-template-columns: 1fr; }
   #sap { flex-direction: column; text-align: center; }
 }
-/* ===== STYLE DU SLIDER AVANT/APRÈS ===== */
+
+/* ===== SLIDER AVANT/APRÈS INTERACTIF ===== */
+.before-after-slider {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Taille idéale pour smartphone et ordi */
+  aspect-ratio: 4/3; 
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  touch-action: pan-y; /* Permet de scroller la page sans bloquer sur le slider */
+}
+
+/* L'image de base (AVANT) */
+.before-after-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Le conteneur de l'image (APRÈS) */
+.after-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Position initiale au milieu */
+  height: 100%;
+  overflow: hidden;
+  border-right: 3px solid white; /* La ligne de séparation */
+  z-index: 2;
+}
+
+/* IMPORTANT : L'image "Après" doit avoir la même largeur que le parent */
+.after-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px; /* Doit être identique à la max-width de .before-after-slider */
+  max-width: none;
+  height: 100%;
+}
+
+/* La barre de contrôle invisible pour le doigt/souris */
+.slider-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  z-index: 3;
+  cursor: ew-resize;
+  margin: 0;
+}
+
+/* On cache le bouton du slider par défaut car on utilise la bordure blanche */
+.slider-input::-webkit-slider-thumb {
+  appearance: none;
+  width: 40px;
+  height: 1000px;
+}
 .sliders-container {
   display: flex;
   flex-direction: column;
