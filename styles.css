@@ -14,23 +14,40 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* ===== Hero ===== */
 #hero {
-  background: url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/hero-bg.jpg') center/cover no-repeat;
+  background: url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/banniere.png') center/cover no-repeat;
   color: white;
   text-align: center;
   padding: 80px 20px;
   position: relative;
 }
+
 #hero::after {
   content: "";
   background: rgba(0,0,0,0.35);
   position: absolute;
   top:0; left:0; width:100%; height:100%;
 }
-#hero .hero-content { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+
+#hero .hero-content { 
+  position: relative; 
+  z-index: 1; 
+  max-width: 900px; 
+  margin: 0 auto; 
+}
+
 .hero-logo { height: 100px; margin-bottom: 20px; }
 .hero-title { font-size: 3rem; margin-bottom: 10px; font-weight: 700; color: #ffffff; }
 .hero-subtitle { font-size: 1.5rem; margin-bottom: 25px; color: #ffffff; }
-.button { background-color: #4caf50; color: white; padding: 12px 25px; border-radius: 8px; font-weight: bold; transition: 0.3s; }
+
+.button { 
+  background-color: #4caf50; 
+  color: white; 
+  padding: 12px 25px; 
+  border-radius: 8px; 
+  font-weight: bold; 
+  transition: 0.3s; 
+}
+
 .button:hover { background-color: #388e3c; }
 
 /* ===== Navigation ===== */
@@ -61,6 +78,20 @@ nav a.active { color: #2e7d32; }
 .contact-btn { display: inline-block; background-color: #4caf50; color: white; padding: 12px 25px; border-radius: 8px; font-weight: bold; margin-top: 20px; }
 .contact-btn:hover { background-color: #388e3c; }
 
+/* ===== Zone d'intervention ===== */
+.zone-intervention {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #d9f0dc; /* vert clair */
+  border-left: 6px solid #4caf50; /* accent vert */
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #2e2e2e;
+  text-align: justify;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
 /* ===== Services ===== */
 #services {
   max-width: 1000px;
@@ -78,31 +109,4 @@ nav a.active { color: #2e7d32; }
 #sap {
   max-width: 1000px;
   margin: 30px auto;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  background-color: #f7faf5;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-#sap img {
-  max-width: 160px;
-  width: 100%;
-  height: auto;
-  display: block;
-}
-#sap p { font-size: 1rem; color: #2e7d32; }
-
-/* ===== Footer ===== */
-footer { text-align: center; padding: 30px 20px; background-color: #f7faf5; margin-top: 40px; font-size: 0.9rem; }
-
-/* ===== Responsive ===== */
-@media (max-width:768px) {
-  #hero .hero-title { font-size: 2rem; }
-  #hero .hero-subtitle { font-size: 1.2rem; }
-  #accueil h2 { font-size: 1.6rem; }
-  #accueil h3 { font-size: 1.2rem; }
-  #services { grid-template-columns: 1fr; }
-  #sap { flex-direction: column; text-align: center; }
-}
+  displa
