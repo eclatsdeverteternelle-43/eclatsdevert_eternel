@@ -34,68 +34,75 @@ document.addEventListener('DOMContentLoaded', () => {
         const afterWrapper = slider.querySelector('.after-wrapper');
         const afterImage = afterWrapper.querySelector('img');
 
-        // Fonction pour synchroniser la barre et l'image
         const updateSlider = () => {
             const value = input.value;
-            // Déplace la ligne de séparation
             afterWrapper.style.width = `${value}%`;
             
-            // Correction pour Ordinateur : On force la largeur de l'image
-            // pour qu'elle ne soit pas écrasée par le conteneur After
             if (slider.offsetWidth > 0) {
                 afterImage.style.width = slider.offsetWidth + 'px';
             }
         };
 
-        // Écoute les mouvements du curseur (souris ou doigt)
         input.addEventListener('input', updateSlider);
-
-        // Crucial pour Ordinateur : Recalculer quand l'image est totalement chargée
-        // et quand on redimensionne la fenêtre
         window.addEventListener('load', updateSlider);
         window.addEventListener('resize', updateSlider);
-
-        // Lancement initial (on force un petit délai pour être sûr que le rendu est prêt)
         setTimeout(updateSlider, 100);
     });
-
 });
+
+// ==========================================
+// 3. FONCTION DES AVIS GOOGLE (Appelée par l'API)
+// ==========================================
 function initReviews() {
+    // Votre Place ID identifié : ChIJx_L3E-Cn2yERRFN59BxqntE
     const placeId = "ChIJx_L3E-Cn2yERRFN59BxqntE";
     const container = document.getElementById('google-reviews-container');
 
-    // On crée un élément invisible pour Google Maps Service
+    if (!container) return;
+
+    // Création du service Google Places
     const service = new google.maps.places.PlacesService(document.createElement('div'));
 
     service.getDetails({
         placeId: placeId,
-        fields: ['reviews', 'user_ratings_total']
+        fields: ['reviews']
     }, (place, status) => {
         if (status === google.maps.places.PlacesServiceStatus.OK && place.reviews) {
-            container.innerHTML = ''; // On vide le message de chargement
+            container.innerHTML = ''; // On vide le texte "Chargement..."
 
-            // On prend les 3 derniers avis
-            place.reviews.sort((a, b) => b.time - a.time).slice(0, 3).forEach(review => {
+            // Tri par date (plus récent d'abord) et limitation à 3 avis
+            const topReviews = place.reviews
+                .sort((a, b) => b.time - a.time)
+                .slice(0, 3);
+
+            topReviews.forEach(review => {
                 const stars = "⭐".repeat(review.rating);
                 const reviewHtml = `
-                    <div class="avis-card">
-                        <div class="avis-header">
-                            <span class="avis-nom">${review.author_name}</span>
-                            <span class="avis-etoiles">${stars}</span>
+                    <div class="avis-card" style="border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 8px; background: #f9f9f9;">
+                        <div class="avis-header" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <strong class="avis-nom">${review.author_name}</strong>
+                            <span class="avis-etoiles" style="color: #f1c40f;">${stars}</span>
                         </div>
-                        <p>"${review.text.substring(0, 150)}..."</p>
+                        <p class="avis-texte" style="font-style: italic; font-size: 0.9em;">"${review.text.substring(0, 160)}..."</p>
                     </div>
                 `;
                 container.innerHTML += reviewHtml;
             });
         } else {
+            console.error("Erreur Google API:", status);
             container.innerHTML = '<p>Découvrez nos avis directement sur Google.</p>';
         }
     });
 }
 
-// Chargement de l'API Google avec ta clé
-const script = document.createElement('script');
-script.src = `https://maps.googleapis.com/maps/api/js?key=TA_CLE_API&libraries=places&callback=initReviews`;
-script.async = true;
-document.head.appendChild(script);
+// ==========================================
+// 4. CHARGEMENT DYNAMIQUE DE L'API GOOGLE
+// ==========================================
+// REMPLACEZ 'VOTRE_CLE_API_REELLE' PAR VOTRE VRAIE CLÉ CI-DESSOUS
+const apiKey = 'AIzaSyAgNdfhKoBAHsgjthRfJslNh1cY3DASzfk'; 
+
+const scriptGoogle = document.createElement('script');
+scriptGoogle.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&callback=initReviews`;
+scriptGoogle.async = true;
+scriptGoogle.defer = true;
+document.head.appendChild(scriptGoogle);
