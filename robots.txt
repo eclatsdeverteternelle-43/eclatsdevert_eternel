@@ -1,6 +1,6 @@
-# Autoriser tous les robots (Google, Bing, etc.) à explorer le site
+# Autoriser tous les robots à explorer le site
 User-agent: *
 Allow: /
 
-# Indiquer l'emplacement du plan du site (remplace par ton URL réelle si elle est différente)
-Sitemap: https://eclatsdeverteternelle-43.github.io/eclatsdevert_eternel/sitemap.xml
+# Indiquer l'emplacement officiel du sitemap
+Sitemap: https://eclatsdeverteternelle.fr/sitemap.xml
