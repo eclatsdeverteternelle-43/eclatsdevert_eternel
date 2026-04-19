@@ -49,7 +49,25 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(updateSlider, 100);
     });
 });
+document.querySelectorAll('.before-after-slider').forEach(slider => {
+  const input = slider.querySelector('.slider-input');
+  const afterWrapper = slider.querySelector('.after-wrapper');
+  const line = slider.querySelector('.slider-line');
 
+  input.addEventListener('input', (e) => {
+    const value = e.target.value + "%";
+    
+    // Si le slider a la classe 'slider-vertical'
+    if (slider.classList.contains('slider-vertical')) {
+      afterWrapper.style.height = value;
+      if(line) line.style.top = value;
+    } else {
+      // Sinon, garde le fonctionnement horizontal classique
+      afterWrapper.style.width = value;
+      if(line) line.style.left = value;
+    }
+  });
+});
 // ==========================================
 // 3. FONCTION DES AVIS GOOGLE (Appelée par l'API)
 // ==========================================
