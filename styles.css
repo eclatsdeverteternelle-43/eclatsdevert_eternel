@@ -15,7 +15,7 @@ img { display: block; max-width: 100%; height: auto; }
 /* ===== 2. SECTION HERO (Bannière) ===== */
 #hero {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-              url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/banniere.png') center/cover no-repeat;
+              url('https://raw.githubusercontent.com/eclatsdeverteternelle-43/eclatsdevert_eternel/main/baniere-printemps.png') center/cover no-repeat;
   color: white;
   padding: 80px 20px;
   display: flex;
